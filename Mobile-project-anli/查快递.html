@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+       <script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var name=[申通="shentong",EMS="ems",顺丰="shunfeng",
+                圆通="yuantong",中通="zhongtong",韵达="yunda",
+                天天="tiantian",汇通="huitongkuaidi",全峰="quanfengkuaidi",
+                德邦="debangwuliu",宅急送="zhaijisong"];
+
+
+                for(var i=0;i<name.length;i++){ //获取
+                    var x=$("<option>");   //创建
+                    x.text(name[i]); //存数据
+
+                    $("#txtName").append(x); //添加进去
+                }
+
+                $("#btn").click(function(){
+                    var url="http://www.kuaidi100.com/query";
+                    //将参数拼接成一个json对象
+                    var param={"type":$("#txtName").val(),
+                                "postid":$("#txtId").val()};
+
+                    //调用getJson方法访问快递查询网站
+                    $.getJSON(url,param,function(e){
+                        for(var i=0;i<e.data.length;i++){  
+                            var li=$("<li>");
+                            var time=e.data[i].time;
+                            var ftime=e.data[i].ftime;
+                            var context=e.data[i].context;
+                            var loc=e.data[i].location;
+                            li.html("出发时间："+time+"<br>"+"到达时间："+ftime+"<br />"+
+                                    "内容："+context+"<br />"+"到达时间："+loc);
+                            $("ul").append(li);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        快递公司名称：<select id="txtName"></select>
+        输入快递编号：<input type="text" id="txtId"/>
+        <input type="button"id="btn" value="查询" />
+        <ul></ul>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>bootran项目</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/xiang-ying-shi-ve.css" />
+	</head>
+<body translate="no">
+<header class="navbar navbar-default navbar-fixed-top" id="banner" style="top: 0px;">
+  <div class="container"><a class="scrollable" href="#top"><img src="http://qlip.in/images/qlip.png" alt="qlip | UI/UX Design and Development" title="qlip | UI/UX Design and Development"></a>
+    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    <nav class="collapse navbar-collapse" id="navbar" role="navigation" aria-expanded="false">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a class="scrollable" href="#top">About</a></li>
+        <li class=""><a class="scrollable" href="#portfolio">Portfolio</a></li>
+        <li class=""><a class="scrollable" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- end header--><a id="top" name="home"></a>
+<main>
+  <header>
+    <div class="intro-text">
+      <p>Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction;  devoted to functional programming and information architecture.</p>
+      <hr class="star-bright"><span class="skills">Web Developer - User Experience Designer - Graphic Artist</span>
+    </div>
+    <img src="http://qlip.in/images/avatar.jpg" alt="A picture of Justin looking at San Francisco from across the Golden Gate Bridge." title="A picture of Justin looking at San Francisco from across the Golden Gate Bridge.">
+  </header>
+  <!-- Gallery Grid Section-->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <hr class="star-dark">
+    <ul class="grid">
+      <li><img src="http://qlip.in/images/YMCA-Realtor-Donation-3.jpg" alt=""></li>
+      <li><img src="http://qlip.in/images/webcaballero.jpg" alt=""></li>
+      <li><img src="http://qlip.in/images/webmarqas.jpg" alt=""></li>
+      <li><img src="http://qlip.in/images/webbrandaxis.jpg" alt=""></li>
+      <li><img src="http://qlip.in/images/panacea1.jpg" alt=""></li>
+      <li><img src="http://qlip.in/images/webgatomalo.jpg" alt=""></li>
+    </ul>
+  </section>
+  <!-- Contact Section-->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <hr class="star-dark">
+    <div>
+      <form id="contactForm" novalidate="">
+        <div class="form-item">
+          <label for="“name”">Name</label>
+          <input id="name" type="text" placeholder="Name" required="">
+        </div>
+        <div class="form-item">
+          <label for="“email”">Email Address</label>
+          <input id="email" type="email" placeholder="Email Address" required="">
+        </div>
+        <div class="form-item">
+          <label for="“phone”">Phone Number</label>
+          <input id="phone" type="tel" placeholder="Phone Number" required="">
+        </div>
+        <div class="form-item">
+          <label for="“message”">Message</label>
+          <textarea id="message" rows="5" placeholder="Message" required=""></textarea>
+        </div><br>
+        <button type="submit">Send</button>
+      </form>
+      <div>
+        <p>Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
+        <p>I promise to reply A.S.A.P.</p>
+        <p>Note: No spam/soliciting pour moi, merci :)</p>
+      </div>
+    </div>
+  </section>
+  <!-- Scroll to Top Button (Only supposed to be visible on small and small screen sizes)-->
+  <div class="scroll-top"><a class="button scrollable" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+</main>
+<!-- Footer-->
+<footer>
+  <div id="footer-above">
+    <div>
+      <h3>About this page</h3>
+      <p>Made with <i class="fa fa-fw fa-coffee"></i> and <i class="fa fa-fw fa-music"></i><br>by <a href="http://qlip.in">Justin Sane</a>.</p>
+    </div>
+    <div>
+      <h3>Around the Web</h3>
+      <ul>
+        <li><a class="button social" href="https://www.linkedin.com/in/hallaathrad"><i class="fa fa-fw fa-linkedin"></i></a></li>
+        <li><a class="button social" href="https://github.com/hallaathrad"><i class="fa fa-fw fa-github"></i></a></li>
+        <li><a class="button social" href="https://twitter.com/hallaathrad"><i class="fa fa-fw fa-twitter"></i></a></li>
+        <li><a class="button social" href="https://www.flickr.com/photos/hallaathrad/" title="My Flickr"><i class="fa fa-fw fa-flickr"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer-below">qlip © 
+    <script>document.write(new Date().getFullYear())</script>2018. All Rights Reversed
+  </div>
+</footer>
+
+    
+ </body>
+ <script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+ <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+ <script>
+ $("img").addClass("carousel-inner img-responsive img-rounded")
+      $(window).on('resize', function() {
+  'use strict';
+  var element	= document.querySelector('#banner'),
+      elHeight = 0,
+      elTop = 0,
+      dHeight	= 0,
+      wHeight	= 0,
+      wScrollCurrent = 0,
+      wScrollBefore	= 0,
+      wScrollDiff	= 0; 
+      window.addEventListener('scroll', function () {
+        // Hide the displayed menu. If you want to scroll, you're obviously not interested in the options.
+        $('.navbar-collapse').collapse('hide');
+        $('.navbar-toggle').addClass('collapsed').blur();
+        if($(window).width() <= 768) {
+          elHeight = element.offsetHeight;
+          dHeight = document.body.offsetHeight;
+          wHeight = window.innerHeight;
+          wScrollCurrent = window.pageYOffset;
+          wScrollDiff = wScrollBefore - wScrollCurrent;
+          elTop = parseInt(window.getComputedStyle(element).getPropertyValue('top')) + wScrollDiff;
+
+          // scrolled to the very top; element sticks to the top
+          if(wScrollCurrent <= 0) {
+              element.style.top = '0px';
+          } // scrolled up; element slides in
+            else if(wScrollDiff > 0) {
+              element.style.top = (elTop > 0? 0 : elTop) + 'px'; 
+          } // scrolled down
+            else if(wScrollDiff < 0) {
+              // scrolled to the very bottom; element slides in
+              if(wScrollCurrent + wHeight >= dHeight - elHeight) {  
+                element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
+              } // scrolled down; element slides out
+                else { element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px'; }
+            }
+          wScrollBefore = wScrollCurrent;
+        } //
+          else element.style.top = '0px';
+      });
+}).resize();
+
+// Floating label headings for the contact form
+$(function() {$("body")
+ .on("input propertychange", ".form-item",function(e) {
+  $(this).toggleClass("form-item-filled",!! $(e.target).val());})
+ .on("focus", ".form-item",function() {
+  $(this).addClass("form-item-focused");})
+ .on("blur", ".form-item",function() {
+  $(this).removeClass("form-item-focused");});
+});
+
+// Highlight the top nav as scrolling occurs
+$('body').scrollspy({target: '.navbar-fixed-top'})
+
+// Closes the Responsive Menu on Menu Item Click
+$('.navbar-collapse ul li a').click(function() {
+  $(".navbar-collapse").collapse('hide');});
+
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {$('body').on('click', 'a.scrollable', function(event) {
+  var $anchor = $(this);
+  $('html, body').stop().animate({scrollTop: $($anchor.attr('href')).offset().top},1500,'easeInOutExpo');
+  event.preventDefault();
+  });
+});
+      //# sourceURL=pen.js
+   </script>
+
+</html>
